@@ -15,7 +15,7 @@ The project is split into two parts:
 
 #### Environment Script
 A file named `set_env.sh` has been prepared as an optional tool to help you configure these variables on your local development environment.
- 
+
 We do _not_ want your credentials to be stored in git. After pulling this `starter` project, run the following command to tell git to stop tracking the script in git but keep it stored locally. This way, you can use the script for your convenience and reduce risk of exposing your credentials.
 `git rm --cached set_env.sh`
 
@@ -70,6 +70,7 @@ Launch the frontend app locally.
     ionic serve
     ```
 * You can visit `http://localhost:8100` in your web browser to verify that the application is running. You should see a web interface.
+psql -h database-1.chfth4lj06ep.us-east-2.rds.amazonaws.com -U postgres postgres
 
 ## Tips
 1. Take a look at `udagram-api` -- does it look like we can divide it into two modules to be deployed as separate microservices?
