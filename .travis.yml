@@ -17,6 +17,17 @@ branches:
     - main
 install:
   - docker-compose -f docker-compose-build.yaml build --parallel
-  - docker-compose -f docker-compose-build.yaml push
+  - docker tag udagram-api-feed shivanand3939/udagram-api-feed:v1
+  - docker tag udagram-api-user shivanand3939/udagram-api-user:v1
+  - docker tag udagram-frontend shivanand3939/frontend:v1
+  - docker tag reverseproxy shivanand3939/reverseproxy:v1
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push shivanand3939/udagram-api-feed:v1
+  - docker push shivanand3939/udagram-api-user:v1
+  - docker push shivanand3939/udagram-frontend:v1
+  - docker push shivanand3939/reverseproxy:v1
+
+
+
 script:
   echo "done"
