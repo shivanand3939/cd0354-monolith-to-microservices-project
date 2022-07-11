@@ -17,5 +17,6 @@ branches:
     - main
 install:
   - docker-compose -f docker-compose-build.yaml build --parallel
+  - docker-compose -f docker-compose-build.yaml push
 script:
   echo "done"
